@@ -7,6 +7,7 @@ from D2MAV_A.runner import Runner
 from copy import deepcopy
 import time
 import platform
+import json
 import numpy as np
 
 os.environ["PYTHONPATH"] = os.getcwd()
@@ -164,13 +165,15 @@ class Driver:
             weights = []
 
         runner_sims = [workers[agent_id].run_one_iteration.remote(weights) for agent_id in workers.keys()]
+        scenario = 0
+        metric_list = []
         for i in range(self.iterations):
 
             done_id, runner_sims = ray.wait(runner_sims, num_returns=self.num_workers)
             results = ray.get(done_id)
             # Uncomment this when running with trained model
-            # transitions, workers_to_remove = self.agent.update_weights(results)
-            transitions = 0
+            transitions, workers_to_remove = self.agent.update_weights(results)
+            # transitions = 0
 
             if self.agent.equipped:
                 weights = self.agent.model.get_weights()
@@ -181,6 +184,8 @@ class Driver:
             total_ac = []
             LOS_total = 0
             shield_total = 0
+            shield_total_intersect = 0 
+            shield_total_route = 0
             for result in results:
                 data = ray.get(result)
 
@@ -195,6 +200,8 @@ class Driver:
 
                 LOS_total += data[0]['los_events']
                 shield_total += data[0]['shield_events']
+                shield_total_intersect += data[0]['shield_events_i']
+                shield_total_route += data[0]['shield_events_r']
                 max_halt_time = data[0]['max_halting_time']
                 max_travel_time = data[0]['max_travel_time']
 
@@ -202,6 +209,7 @@ class Driver:
                 mean_total_reward = np.mean(total_reward)
 
             for j, nmac in enumerate(nmacs):
+                scenario += 1
                 print(f"     Scenario Complete     ")
                 print("|------------------------------|")
                 print(f"| Total NMACS:      {nmac}      |")
@@ -211,8 +219,18 @@ class Driver:
                 print(f"| Max Travel Time: {max_travel_time}  |")
                 print(f"| Number of LOS Events: {LOS_total}  |")
                 print(f"| Number of Shield Events: {shield_total}  |")
+                print(f"| Number of Intersection Shield Events: {shield_total_intersect}  |")
+                print(f"| Number of Route Shield Events: {shield_total_route}  |")
                 print("|------------------------------|")
                 print(" ")
+                metric_dict = {}
+                metric_dict['scenario_num'] = scenario
+                metric_dict['shield_total'] = shield_total
+                metric_dict['shield_total_intersection'] = shield_total_intersect
+                metric_dict['shield_total_route'] = shield_total_route
+                metric_dict['max_travel_time'] = max_travel_time
+                metric_dict['los'] = LOS_total
+                metric_list.append(metric_dict)
                 total_nmacs.append(nmac)
                 max_travel_times.append(max_travel_time)
                 total_LOS.append(LOS_total)
@@ -279,6 +297,10 @@ class Driver:
             runner_sims = [workers[agent_id].run_one_iteration.remote(weights) for agent_id in workers.keys()]
         print("Mean Travel Times: ", np.mean(max_travel_times))
         print("Mean number of NMACS: ", np.mean(total_LOS))
+        print(metric_list)
+        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/training_without_vls.json', 'w') as file:
+            json.dump(metric_list, file, indent=4)
+            
     def evaluate(self):
 
         # Start simulations on actors

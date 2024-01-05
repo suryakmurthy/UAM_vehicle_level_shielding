@@ -311,6 +311,7 @@ class VehicleHelper:
         # print("Changing route section: ", self.vehicle_ID, self.current_route_section)
         # TODO: set self.next_intersection to be the intersection that has self.current_route_section as an inbound route section
         # TODO: Try using the stored route object to find and save the next intersection.
+        # print("Changing Route section: ", self.vehicle_ID, self.previous_route_section, self.current_intersection, self.current_route_section)
         self.get_next_route_section()
 
     def get_next_route_section(self) -> None:
@@ -403,7 +404,8 @@ class VLS:
         c_route_section = removed_vehicle.current_route_section
         n_route_section = removed_vehicle.next_route_section
         if c_route_section in self.route_mapping.keys():
-            self.route_mapping[c_route_section].remove(v_id)
+            if v_id in self.route_mapping[c_route_section]:
+                self.route_mapping[c_route_section].remove(v_id)
             if self.route_mapping[c_route_section] == []:
                     del self.route_mapping[c_route_section]
                     if self.route_mapping != {}:
