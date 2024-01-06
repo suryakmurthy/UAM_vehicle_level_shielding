@@ -1,0 +1,194 @@
+[
+    {
+        "scenario_num": 1,
+        "shield_total": 1631,
+        "shield_total_intersection": 1361,
+        "shield_total_route": 270,
+        "max_travel_time": 1460.0,
+        "los": 3
+    },
+    {
+        "scenario_num": 2,
+        "shield_total": 2395,
+        "shield_total_intersection": 2186,
+        "shield_total_route": 209,
+        "max_travel_time": 1772.0,
+        "los": 4
+    },
+    {
+        "scenario_num": 3,
+        "shield_total": 1084,
+        "shield_total_intersection": 898,
+        "shield_total_route": 186,
+        "max_travel_time": 5804.0,
+        "los": 1
+    },
+    {
+        "scenario_num": 4,
+        "shield_total": 939,
+        "shield_total_intersection": 784,
+        "shield_total_route": 155,
+        "max_travel_time": 2328.0,
+        "los": 0
+    },
+    {
+        "scenario_num": 5,
+        "shield_total": 432,
+        "shield_total_intersection": 381,
+        "shield_total_route": 51,
+        "max_travel_time": 1636.0,
+        "los": 1
+    },
+    {
+        "scenario_num": 6,
+        "shield_total": 1185,
+        "shield_total_intersection": 1075,
+        "shield_total_route": 110,
+        "max_travel_time": 1360.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 7,
+        "shield_total": 1150,
+        "shield_total_intersection": 1071,
+        "shield_total_route": 79,
+        "max_travel_time": 1032.0,
+        "los": 0
+    },
+    {
+        "scenario_num": 8,
+        "shield_total": 2024,
+        "shield_total_intersection": 1661,
+        "shield_total_route": 363,
+        "max_travel_time": 1256.0,
+        "los": 4
+    },
+    {
+        "scenario_num": 9,
+        "shield_total": 2039,
+        "shield_total_intersection": 1508,
+        "shield_total_route": 531,
+        "max_travel_time": 1176.0,
+        "los": 6
+    },
+    {
+        "scenario_num": 10,
+        "shield_total": 1831,
+        "shield_total_intersection": 1444,
+        "shield_total_route": 387,
+        "max_travel_time": 1292.0,
+        "los": 4
+    },
+    {
+        "scenario_num": 11,
+        "shield_total": 1438,
+        "shield_total_intersection": 1279,
+        "shield_total_route": 159,
+        "max_travel_time": 1220.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 12,
+        "shield_total": 1171,
+        "shield_total_intersection": 1038,
+        "shield_total_route": 133,
+        "max_travel_time": 1324.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 13,
+        "shield_total": 1861,
+        "shield_total_intersection": 1683,
+        "shield_total_route": 178,
+        "max_travel_time": 1364.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 14,
+        "shield_total": 1938,
+        "shield_total_intersection": 1765,
+        "shield_total_route": 173,
+        "max_travel_time": 1304.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 15,
+        "shield_total": 1916,
+        "shield_total_intersection": 1642,
+        "shield_total_route": 274,
+        "max_travel_time": 1484.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 16,
+        "shield_total": 1271,
+        "shield_total_intersection": 1145,
+        "shield_total_route": 126,
+        "max_travel_time": 1040.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 17,
+        "shield_total": 1603,
+        "shield_total_intersection": 1445,
+        "shield_total_route": 158,
+        "max_travel_time": 1020.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 18,
+        "shield_total": 1409,
+        "shield_total_intersection": 1266,
+        "shield_total_route": 143,
+        "max_travel_time": 1044.0,
+        "los": 1
+    },
+    {
+        "scenario_num": 19,
+        "shield_total": 1005,
+        "shield_total_intersection": 943,
+        "shield_total_route": 62,
+        "max_travel_time": 1288.0,
+        "los": 0
+    },
+    {
+        "scenario_num": 20,
+        "shield_total": 1213,
+        "shield_total_intersection": 1112,
+        "shield_total_route": 101,
+        "max_travel_time": 1032.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 21,
+        "shield_total": 1583,
+        "shield_total_intersection": 1426,
+        "shield_total_route": 157,
+        "max_travel_time": 1028.0,
+        "los": 3
+    },
+    {
+        "scenario_num": 22,
+        "shield_total": 1333,
+        "shield_total_intersection": 1198,
+        "shield_total_route": 135,
+        "max_travel_time": 1016.0,
+        "los": 1
+    },
+    {
+        "scenario_num": 23,
+        "shield_total": 1329,
+        "shield_total_intersection": 1147,
+        "shield_total_route": 182,
+        "max_travel_time": 1264.0,
+        "los": 2
+    },
+    {
+        "scenario_num": 24,
+        "shield_total": 1645,
+        "shield_total_intersection": 1478,
+        "shield_total_route": 167,
+        "max_travel_time": 1080.0,
+        "los": 2
+    }
+]

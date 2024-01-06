@@ -62,7 +62,7 @@ class Intersection(Tower):
     ):
         # Base class init
         super().__init__(*args, **kwargs)
-
+        self.location = location
         self.inbound_route_section_towers = {}
         for rs in inbound:
             # self.tower_ID in this context is the ID of the intersection that
@@ -411,7 +411,8 @@ class VLS:
                     if self.route_mapping != {}:
                         self.current_route = list(self.route_mapping.keys())[0]
         if n_route_section in self.route_mapping.keys():
-            self.route_mapping[n_route_section].remove(v_id)
+            if v_id in self.route_mapping[n_route_section]:
+                self.route_mapping[n_route_section].remove(v_id)
             if self.route_mapping[n_route_section] == []:
                     del self.route_mapping[n_route_section]
                     if self.route_mapping != {}:
