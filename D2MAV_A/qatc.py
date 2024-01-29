@@ -116,25 +116,34 @@ class Intersection(Tower):
             b = self.open_slots > 0
             if a and b:
                 # Update the route section
-                self.outbound_route_section_towers[to_section].authorized.append(id_)
-                self.outbound_route_section_towers[to_section].set_volume()
+                if id_ not in self.outbound_route_section_towers[to_section].authorized:
+                    self.outbound_route_section_towers[to_section].authorized.append(id_)
+                    self.outbound_route_section_towers[to_section].set_volume()
                 # Update the intersection
-                self.authorized.append(id_)
-                self.set_volume()
+                if id_ not in self.authorized:
+                    self.authorized.append(id_)
+                    self.set_volume()
                 # TODO: The following is an example of how to update the inbound route section to account for the vehicle leaving
                 # if from_section:
                 #     self.inbound_route_section_towers[from_section].leaving.append(id_)
                 return True  # Authorized to enter
             else:
-                return False  # Not authorized to enter
+                if id_ in self.outbound_route_section_towers[to_section].authorized and id_ in self.authorized:
+                    return True
+                else:
+                    return False  # Not authorized to enter
         else:  # i.e. vehicle is exiting
             if self.open_slots > 0:
                 # Update the intersection
-                self.authorized.append(id_)
-                self.set_volume()
+                if id_ not in self.authorized:
+                    self.authorized.append(id_)
+                    self.set_volume()
                 return True
             else:
-                return False
+                if id_ in self.authorized:
+                    return True
+                else:
+                    return False  # Not authorized to enter
 
 
 class TrafficManager:
@@ -162,7 +171,7 @@ class TrafficManager:
         for route in tower_config['Routes']:
             # route is type dict
             for section in route['sections']:
-                out[section] = Tower(section, 10)
+                out[section] = Tower(section, 1000)
         return out
 
     def create_intersections(self, tower_config) -> dict:
@@ -201,13 +210,16 @@ class TrafficManager:
     def process_requests(self) -> dict:
         response = {}
         for id_, request in self.current_requests.items():
+            # print(f"Requesting {id_}, {request}")
             response[id_] = self.request(*request)
+            # print(f"Response {response[id_]}")
         self.current_requests = {}
         return response
 
     def request(self, id_, from_section, to_section) -> bool:
         if to_section:
             outbound_intersection = self.search_for_intersection(to_section, 'outbound')
+            # print("To section case: ", outbound_intersection, outbound_intersection.enter_request(id_, from_section, to_section))
             return outbound_intersection.enter_request(id_, from_section, to_section)
         else:
             inbound_intersection = self.search_for_intersection(from_section, 'inbound')
@@ -346,7 +358,7 @@ class VehicleHelper:
 
     def check_if_request_eligible(self, position: list) -> bool:
         ''' position: list of [lon,lat] coordinates '''
-        if self.distance_to_next_boundary(position) < 1000.:  # x,y meters
+        if self.distance_to_next_boundary(position) < 1000.0:  # x,y meters
             return True
         else:
             return False

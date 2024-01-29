@@ -1,0 +1,722 @@
+[
+    {
+        "scenario_num": 1,
+        "shield_total": 1453,
+        "shield_total_intersection": 549,
+        "shield_total_route": 904,
+        "max_travel_time": 3108.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 2,
+        "shield_total": 1511,
+        "shield_total_intersection": 503,
+        "shield_total_route": 1008,
+        "max_travel_time": 3276.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 3,
+        "shield_total": 1586,
+        "shield_total_intersection": 670,
+        "shield_total_route": 916,
+        "max_travel_time": 3188.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 4,
+        "shield_total": 1589,
+        "shield_total_intersection": 573,
+        "shield_total_route": 1016,
+        "max_travel_time": 3168.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 5,
+        "shield_total": 1208,
+        "shield_total_intersection": 670,
+        "shield_total_route": 538,
+        "max_travel_time": 3084.0,
+        "los": 0,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 6,
+        "shield_total": 1273,
+        "shield_total_intersection": 566,
+        "shield_total_route": 707,
+        "max_travel_time": 3212.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 7,
+        "shield_total": 1137,
+        "shield_total_intersection": 509,
+        "shield_total_route": 628,
+        "max_travel_time": 3096.0,
+        "los": 0,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 8,
+        "shield_total": 1733,
+        "shield_total_intersection": 563,
+        "shield_total_route": 1170,
+        "max_travel_time": 3288.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 9,
+        "shield_total": 1271,
+        "shield_total_intersection": 620,
+        "shield_total_route": 651,
+        "max_travel_time": 3124.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 10,
+        "shield_total": 1319,
+        "shield_total_intersection": 645,
+        "shield_total_route": 674,
+        "max_travel_time": 3216.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 11,
+        "shield_total": 1206,
+        "shield_total_intersection": 519,
+        "shield_total_route": 687,
+        "max_travel_time": 3136.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 12,
+        "shield_total": 1330,
+        "shield_total_intersection": 594,
+        "shield_total_route": 736,
+        "max_travel_time": 3244.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 13,
+        "shield_total": 1066,
+        "shield_total_intersection": 568,
+        "shield_total_route": 498,
+        "max_travel_time": 3184.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 14,
+        "shield_total": 1354,
+        "shield_total_intersection": 566,
+        "shield_total_route": 788,
+        "max_travel_time": 3060.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 15,
+        "shield_total": 1287,
+        "shield_total_intersection": 642,
+        "shield_total_route": 645,
+        "max_travel_time": 3232.0,
+        "los": 5,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 16,
+        "shield_total": 1521,
+        "shield_total_intersection": 522,
+        "shield_total_route": 999,
+        "max_travel_time": 3156.0,
+        "los": 5,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 17,
+        "shield_total": 1623,
+        "shield_total_intersection": 671,
+        "shield_total_route": 952,
+        "max_travel_time": 3172.0,
+        "los": 5,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 18,
+        "shield_total": 1306,
+        "shield_total_intersection": 682,
+        "shield_total_route": 624,
+        "max_travel_time": 3200.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 19,
+        "shield_total": 1538,
+        "shield_total_intersection": 705,
+        "shield_total_route": 833,
+        "max_travel_time": 3192.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 20,
+        "shield_total": 1440,
+        "shield_total_intersection": 546,
+        "shield_total_route": 894,
+        "max_travel_time": 3088.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 21,
+        "shield_total": 1566,
+        "shield_total_intersection": 642,
+        "shield_total_route": 924,
+        "max_travel_time": 3208.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 22,
+        "shield_total": 1224,
+        "shield_total_intersection": 505,
+        "shield_total_route": 719,
+        "max_travel_time": 3132.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 23,
+        "shield_total": 1430,
+        "shield_total_intersection": 597,
+        "shield_total_route": 833,
+        "max_travel_time": 3272.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 24,
+        "shield_total": 1398,
+        "shield_total_intersection": 662,
+        "shield_total_route": 736,
+        "max_travel_time": 3256.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 25,
+        "shield_total": 1474,
+        "shield_total_intersection": 655,
+        "shield_total_route": 819,
+        "max_travel_time": 3048.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 26,
+        "shield_total": 1697,
+        "shield_total_intersection": 663,
+        "shield_total_route": 1034,
+        "max_travel_time": 3032.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 27,
+        "shield_total": 1425,
+        "shield_total_intersection": 516,
+        "shield_total_route": 909,
+        "max_travel_time": 3268.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 28,
+        "shield_total": 1349,
+        "shield_total_intersection": 626,
+        "shield_total_route": 723,
+        "max_travel_time": 3232.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 29,
+        "shield_total": 1248,
+        "shield_total_intersection": 678,
+        "shield_total_route": 570,
+        "max_travel_time": 3184.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 30,
+        "shield_total": 1362,
+        "shield_total_intersection": 620,
+        "shield_total_route": 742,
+        "max_travel_time": 3140.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 31,
+        "shield_total": 1254,
+        "shield_total_intersection": 494,
+        "shield_total_route": 760,
+        "max_travel_time": 3208.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 32,
+        "shield_total": 1315,
+        "shield_total_intersection": 470,
+        "shield_total_route": 845,
+        "max_travel_time": 3172.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 33,
+        "shield_total": 1534,
+        "shield_total_intersection": 659,
+        "shield_total_route": 875,
+        "max_travel_time": 3116.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 34,
+        "shield_total": 934,
+        "shield_total_intersection": 437,
+        "shield_total_route": 497,
+        "max_travel_time": 3088.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 35,
+        "shield_total": 1389,
+        "shield_total_intersection": 800,
+        "shield_total_route": 589,
+        "max_travel_time": 3116.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 36,
+        "shield_total": 1444,
+        "shield_total_intersection": 746,
+        "shield_total_route": 698,
+        "max_travel_time": 3108.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 37,
+        "shield_total": 1224,
+        "shield_total_intersection": 560,
+        "shield_total_route": 664,
+        "max_travel_time": 3192.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 38,
+        "shield_total": 1200,
+        "shield_total_intersection": 515,
+        "shield_total_route": 685,
+        "max_travel_time": 3188.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 39,
+        "shield_total": 1094,
+        "shield_total_intersection": 494,
+        "shield_total_route": 600,
+        "max_travel_time": 3424.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 40,
+        "shield_total": 1148,
+        "shield_total_intersection": 357,
+        "shield_total_route": 791,
+        "max_travel_time": 3084.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 41,
+        "shield_total": 1306,
+        "shield_total_intersection": 746,
+        "shield_total_route": 560,
+        "max_travel_time": 3168.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 42,
+        "shield_total": 1273,
+        "shield_total_intersection": 606,
+        "shield_total_route": 667,
+        "max_travel_time": 3228.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 43,
+        "shield_total": 1295,
+        "shield_total_intersection": 616,
+        "shield_total_route": 679,
+        "max_travel_time": 3224.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 44,
+        "shield_total": 1171,
+        "shield_total_intersection": 611,
+        "shield_total_route": 560,
+        "max_travel_time": 3104.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 45,
+        "shield_total": 1398,
+        "shield_total_intersection": 604,
+        "shield_total_route": 794,
+        "max_travel_time": 3132.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 46,
+        "shield_total": 1158,
+        "shield_total_intersection": 540,
+        "shield_total_route": 618,
+        "max_travel_time": 3144.0,
+        "los": 0,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 47,
+        "shield_total": 961,
+        "shield_total_intersection": 581,
+        "shield_total_route": 380,
+        "max_travel_time": 3212.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 48,
+        "shield_total": 1654,
+        "shield_total_intersection": 701,
+        "shield_total_route": 953,
+        "max_travel_time": 3184.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 49,
+        "shield_total": 1264,
+        "shield_total_intersection": 583,
+        "shield_total_route": 681,
+        "max_travel_time": 3156.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 50,
+        "shield_total": 1146,
+        "shield_total_intersection": 553,
+        "shield_total_route": 593,
+        "max_travel_time": 3168.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 51,
+        "shield_total": 1034,
+        "shield_total_intersection": 478,
+        "shield_total_route": 556,
+        "max_travel_time": 3212.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 52,
+        "shield_total": 1901,
+        "shield_total_intersection": 481,
+        "shield_total_route": 1420,
+        "max_travel_time": 3152.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 53,
+        "shield_total": 1673,
+        "shield_total_intersection": 672,
+        "shield_total_route": 1001,
+        "max_travel_time": 3196.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 54,
+        "shield_total": 1299,
+        "shield_total_intersection": 544,
+        "shield_total_route": 755,
+        "max_travel_time": 3136.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 55,
+        "shield_total": 1302,
+        "shield_total_intersection": 717,
+        "shield_total_route": 585,
+        "max_travel_time": 3100.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 56,
+        "shield_total": 1394,
+        "shield_total_intersection": 572,
+        "shield_total_route": 822,
+        "max_travel_time": 3200.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 57,
+        "shield_total": 1408,
+        "shield_total_intersection": 636,
+        "shield_total_route": 772,
+        "max_travel_time": 3100.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 58,
+        "shield_total": 1406,
+        "shield_total_intersection": 606,
+        "shield_total_route": 800,
+        "max_travel_time": 3168.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 59,
+        "shield_total": 1508,
+        "shield_total_intersection": 600,
+        "shield_total_route": 908,
+        "max_travel_time": 3160.0,
+        "los": 5,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 60,
+        "shield_total": 1068,
+        "shield_total_intersection": 389,
+        "shield_total_route": 679,
+        "max_travel_time": 3192.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 61,
+        "shield_total": 1181,
+        "shield_total_intersection": 526,
+        "shield_total_route": 655,
+        "max_travel_time": 3192.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 62,
+        "shield_total": 1402,
+        "shield_total_intersection": 709,
+        "shield_total_route": 693,
+        "max_travel_time": 3152.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 63,
+        "shield_total": 1281,
+        "shield_total_intersection": 648,
+        "shield_total_route": 633,
+        "max_travel_time": 3068.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 64,
+        "shield_total": 1059,
+        "shield_total_intersection": 537,
+        "shield_total_route": 522,
+        "max_travel_time": 3192.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 65,
+        "shield_total": 1215,
+        "shield_total_intersection": 535,
+        "shield_total_route": 680,
+        "max_travel_time": 3192.0,
+        "los": 3,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 66,
+        "shield_total": 1706,
+        "shield_total_intersection": 757,
+        "shield_total_route": 949,
+        "max_travel_time": 3108.0,
+        "los": 4,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 67,
+        "shield_total": 1112,
+        "shield_total_intersection": 558,
+        "shield_total_route": 554,
+        "max_travel_time": 3180.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 68,
+        "shield_total": 1183,
+        "shield_total_intersection": 602,
+        "shield_total_route": 581,
+        "max_travel_time": 3284.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 69,
+        "shield_total": 1560,
+        "shield_total_intersection": 757,
+        "shield_total_route": 803,
+        "max_travel_time": 3116.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 70,
+        "shield_total": 1636,
+        "shield_total_intersection": 708,
+        "shield_total_route": 928,
+        "max_travel_time": 3148.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 71,
+        "shield_total": 1255,
+        "shield_total_intersection": 587,
+        "shield_total_route": 668,
+        "max_travel_time": 3124.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 72,
+        "shield_total": 1280,
+        "shield_total_intersection": 466,
+        "shield_total_route": 814,
+        "max_travel_time": 3024.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 73,
+        "shield_total": 1214,
+        "shield_total_intersection": 649,
+        "shield_total_route": 565,
+        "max_travel_time": 3220.0,
+        "los": 0,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 74,
+        "shield_total": 1336,
+        "shield_total_intersection": 620,
+        "shield_total_route": 716,
+        "max_travel_time": 3192.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 75,
+        "shield_total": 1280,
+        "shield_total_intersection": 587,
+        "shield_total_route": 693,
+        "max_travel_time": 3160.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 76,
+        "shield_total": 1319,
+        "shield_total_intersection": 629,
+        "shield_total_route": 690,
+        "max_travel_time": 3172.0,
+        "los": 0,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 77,
+        "shield_total": 1248,
+        "shield_total_intersection": 696,
+        "shield_total_route": 552,
+        "max_travel_time": 3132.0,
+        "los": 0,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 78,
+        "shield_total": 1395,
+        "shield_total_intersection": 771,
+        "shield_total_route": 624,
+        "max_travel_time": 3168.0,
+        "los": 2,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 79,
+        "shield_total": 1427,
+        "shield_total_intersection": 630,
+        "shield_total_route": 797,
+        "max_travel_time": 3088.0,
+        "los": 6,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    },
+    {
+        "scenario_num": 80,
+        "shield_total": 1215,
+        "shield_total_intersection": 642,
+        "shield_total_route": 573,
+        "max_travel_time": 3000.0,
+        "los": 1,
+        "scenario_name": "scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn"
+    }
+]

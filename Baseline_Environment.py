@@ -17,7 +17,7 @@ class Communication_Node():
     import tensorflow as tf
     import bluesky as bs
     def __init__(self, scenario_file):
-        self.bs.init(mode="sim", configfile=r'C:\Users\surya\PycharmProjects\ISMS_39\ILASMS_func3a-update-routes\settings.cfg')
+        self.bs.init(mode="sim", configfile=f'/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/settings.cfg')
         self.bs.net.connect()
         self.reset(scenario_file)
     def reset(self, scenario_file):
@@ -35,8 +35,11 @@ class Communication_Node():
 
 def generate_scenario(path, num_scenarios, num_aircraft, dep_interval):
     for n_s in range(0, num_scenarios):
-        print(path + r"\test_case_"+str(n_s)+".scn")
-        f = open(path + r"\test_case_"+str(n_s)+".scn", "w")
+        print(path + f"/aircraft_"+str(num_aircraft)+"/test_case_"+str(n_s)+".scn")
+        folder_path = path + f"/aircraft_"+str(num_aircraft)
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+        f = open(path + f"/aircraft_"+str(num_aircraft)+"/test_case_"+str(n_s)+".scn", "w")
 
         f.write("00:00:00.00>TRAILS ON \n")
         f.write("\n")
@@ -45,7 +48,7 @@ def generate_scenario(path, num_scenarios, num_aircraft, dep_interval):
 
         # Load Route Names for Generation
         waypoint_data = pd.read_csv(
-            r'C:\Users\surya\PycharmProjects\ISMS_39\ILASMS_func3a\bluesky\bluesky\resources\navdata\nav.dat',
+            f'/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/bluesky/resources/navdata/nav.dat',
             delimiter='\t')
         waypoint_names = waypoint_data.iloc[:, 7]
         route_waypoints = {}
@@ -58,6 +61,8 @@ def generate_scenario(path, num_scenarios, num_aircraft, dep_interval):
         for i in range(num_aircraft):
             # plane="A"+str(i)
             route_id = random.choice(list(route_waypoints.keys()))
+            while "NHW" in route_id:
+                route_id = random.choice(list(route_waypoints.keys()))
             route_length = len(route_waypoints[route_id])
             plane = "P" + route_id + str(i)
             time = "00:00:" + str(i * dep_interval) + ".00"
@@ -75,23 +80,24 @@ def generate_scenario(path, num_scenarios, num_aircraft, dep_interval):
 
 
 # Test Scenario Generation:
+intervals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
+for num_a in intervals:
+    generate_scenario(f'/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/scenarios/generated_scenarios_3', 1, num_a, 10)
 
-generate_scenario(r'C:\Users\surya\PycharmProjects\ISMS_39\ILASMS_func3a-update-routes\scenarios\generated_scenarios', 5, 10, 10)
+# scenario_file = f'C:\Users\surya\PycharmProjects\ISMS_39\ILASMS_func3a-update-routes\scenarios\generated_scenarios\test_case_0.scn'
+# # scenario_file = r'C:\Users\surya\PycharmProjects\ISMS_39\ILASMS_func3a-update-routes\scenarios\basic_env.scn'
+# # https://github.com/TUDelft-CNS-ATM/bluesky/wiki/navdb
+# node_1 = Communication_Node(scenario_file)
 
-scenario_file = r'C:\Users\surya\PycharmProjects\ISMS_39\ILASMS_func3a-update-routes\scenarios\generated_scenarios\test_case_0.scn'
-# scenario_file = r'C:\Users\surya\PycharmProjects\ISMS_39\ILASMS_func3a-update-routes\scenarios\basic_env.scn'
-# https://github.com/TUDelft-CNS-ATM/bluesky/wiki/navdb
-node_1 = Communication_Node(scenario_file)
-
-interval_1 = 1000
-interval_2 = 100000
-counter = 0
-counter_2 = 0
-counter_3 = 0
-# Simulation Update Loop: reset and load a new scenario once all vehicles have exited the simulation.
-while 1:
-    # time.sleep(0.01)
-    node_1.update()
+# interval_1 = 1000
+# interval_2 = 100000
+# counter = 0
+# counter_2 = 0
+# counter_3 = 0
+# # Simulation Update Loop: reset and load a new scenario once all vehicles have exited the simulation.
+# while 1:
+#     # time.sleep(0.01)
+#     node_1.update()
 
 
 

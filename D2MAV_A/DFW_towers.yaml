@@ -1,10 +1,10 @@
----
+---max_slots: 1000
 Routes:
   - identifier: I30L
     sections: [I30L_1, I30L_2, I30L_3, I30L_4, I30L_5]
     sectionWPs:
       - id: I30L_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.86431378,
           32.87102616,
@@ -18,7 +18,7 @@ Routes:
           -96.45960051,
         ]
       - id: I30L_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.83067195,
           32.83395147,
@@ -32,7 +32,7 @@ Routes:
           -96.56458756,
         ]
       - id: I30L_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.80205862,
           # 32.80484382,
@@ -46,7 +46,7 @@ Routes:
           -96.63951865,
         ]
       - id: I30L_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.77977325,
           32.78688259,
@@ -64,7 +64,7 @@ Routes:
           -96.69212985,
         ]
       - id: I30L_5
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.77168900,
           32.77173371,
@@ -79,7 +79,7 @@ Routes:
     sections: [I30R_1, I30R_2, I30R_3, I30R_4, I30R_5]
     sectionWPs:
       - id: I30R_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.75072400,
           32.76326513,
@@ -91,7 +91,7 @@ Routes:
           -96.81751612,
         ]
       - id: I30R_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.76313673,
           32.77567329,
@@ -109,7 +109,7 @@ Routes:
           -96.68876244,
         ]
       - id: I30R_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.79822635,
           32.81545498,
@@ -119,7 +119,7 @@ Routes:
           -96.63276345,
         ]
       - id: I30R_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.82355805,
           32.83022024,
@@ -131,7 +131,7 @@ Routes:
           -96.55939734,
         ]
       - id: I30R_5
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.85520350,
           32.88831953,
@@ -146,7 +146,7 @@ Routes:
     sections: [635L_1, 635L_2, 635L_3, 635L_4, 635L_5]
     sectionWPs:
       - id: 635L_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.92092592,
           32.91288934,
@@ -160,7 +160,7 @@ Routes:
           # -96.90530624,
         ]
       - id: 635L_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.91960090,
           32.91961084,
@@ -172,7 +172,7 @@ Routes:
           -96.81209828,
         ]
       - id: 635L_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.86944400,
           32.88576586,
@@ -184,7 +184,7 @@ Routes:
           -96.75671776,
         ]
       - id: 635L_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.82941747,
           32.84476429,
@@ -196,7 +196,7 @@ Routes:
           -96.66405853,
         ]
       - id: 635L_5
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.79896700,
           32.81572088,
@@ -209,7 +209,7 @@ Routes:
     sections: [635R_1, 635R_2, 635R_3, 635R_4, 635R_5]
     sectionWPs:
       - id: 635R_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.79986900,
           32.81726811,
@@ -219,7 +219,7 @@ Routes:
           -96.62310074,
         ]
       - id: 635R_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.83088193,
           32.84765699,
@@ -233,7 +233,7 @@ Routes:
           -96.65819517,
         ]
       - id: 635R_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.87558700,
           32.89347248,
@@ -249,7 +249,7 @@ Routes:
           -96.75439375,
         ]
       - id: 635R_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.92943417,
           32.92881970,
@@ -261,7 +261,7 @@ Routes:
           -96.81199845,
         ]
       - id: 635R_5
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.93135668,
           32.93094391,
@@ -280,7 +280,7 @@ Routes:
     sections: [CENL_1, CENL_2, CENL_3, CENL_4]
     sectionWPs:
       - id: CENL_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.76982652,
           # 32.77568121,
@@ -298,7 +298,7 @@ Routes:
           -96.76504438,
         ]
       - id: CENL_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.87253651,
           32.89396940,
@@ -312,7 +312,7 @@ Routes:
           -96.76186278,
         ]
       - id: CENL_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.92703961,
           32.94286437,
@@ -328,7 +328,7 @@ Routes:
           -96.70276699,
         ]
       - id: CENL_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.01084075,
           33.02503272,
@@ -349,7 +349,7 @@ Routes:
     sections: [CENR_1, CENR_2, CENR_3, CENR_4]
     sectionWPs:
       - id: CENR_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.00938417,
           33.02642972,
@@ -367,7 +367,7 @@ Routes:
           # -96.65014841,
         ]
       - id: CENR_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.93251477,
           32.99849401,
@@ -377,7 +377,7 @@ Routes:
           -96.71537599,
         ]
       - id: CENR_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.87251895,
           32.88604323,
@@ -391,7 +391,7 @@ Routes:
           -96.77154196,
         ]
       - id: CENR_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.76810334,
           # 32.77061148,
@@ -412,7 +412,7 @@ Routes:
     sections: [H12L_1]
     sectionWPs:
       - id: H12L_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.78784263,
           # 32.79255953,
@@ -433,7 +433,7 @@ Routes:
     sections: [H12R_1]
     sectionWPs:
       - id: H12R_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.78765340,
           # 32.79845079,
@@ -454,7 +454,7 @@ Routes:
     sections: [NHWL_1, NHWL_2, NHWL_3, NHWL_4, NHWL_5]
     sectionWPs:
       - id: NHWL_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.86037281,
           32.86074789,
@@ -466,7 +466,7 @@ Routes:
           -96.77867790,
         ]
       - id: NHWL_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.86042453,
           32.85252828,
@@ -480,7 +480,7 @@ Routes:
           -96.72410501,
         ]
       - id: NHWL_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.85999372,
           32.85900600,
@@ -490,7 +490,7 @@ Routes:
           -96.68412100,
         ]
       - id: NHWL_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.86059851,
           # 32.86549158,
@@ -506,7 +506,7 @@ Routes:
           -96.61625495,
         ]
       - id: NHWL_5
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.95552104,
           32.96337481,
@@ -521,7 +521,7 @@ Routes:
     sections: [NHWR_1, NHWR_2, NHWR_3, NHWR_4, NHWR_5]
     sectionWPs:
       - id: NHWR_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.95809481,
           32.96320540,
@@ -535,7 +535,7 @@ Routes:
           -96.53243846,
         ]
       - id: NHWR_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.87647255,
           32.92459000,
@@ -547,7 +547,7 @@ Routes:
           -96.62705351,
         ]
       - id: NHWR_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.86872622,
           32.86858300,
@@ -557,7 +557,7 @@ Routes:
           -96.68481200,
         ]
       - id: NHWR_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.86968836,
           32.86156620,
@@ -567,7 +567,7 @@ Routes:
           -96.72924097,
         ]
       - id: NHWR_5
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.87094142,
           32.87052878,
@@ -582,7 +582,7 @@ Routes:
     sections: [COLL_1, COLL_2]
     sectionWPs:
       - id: COLL_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.08478881,
           33.07813326,
@@ -600,7 +600,7 @@ Routes:
           # -96.99358243,
         ]
       - id: COLL_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 33.15976134,
           33.14701779,
@@ -621,7 +621,7 @@ Routes:
     sections: [COLR_1, COLR_2]
     sectionWPs:
       - id: COLR_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 33.17378337,
           33.15996756,
@@ -633,7 +633,7 @@ Routes:
           -96.82525983,
         ]
       - id: COLR_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.09875150,
           33.08763504,
@@ -654,7 +654,7 @@ Routes:
     sections: [BUSL_1, BUSL_2, BUSL_3, BUSL_4]
     sectionWPs:
       - id: BUSL_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.00726373,
           33.00719372,
@@ -672,7 +672,7 @@ Routes:
           # -96.93631060,
         ]
       - id: BUSL_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.99933564,
           32.99248804,
@@ -686,7 +686,7 @@ Routes:
           -96.82181260,
         ]
       - id: BUSL_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.95028122,
           32.96190581,
@@ -702,7 +702,7 @@ Routes:
           -96.70067354,
         ]
       - id: BUSL_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.84906489,
           32.86285550,
@@ -721,7 +721,7 @@ Routes:
     sections: [BUSR_1, BUSR_2, BUSR_3, BUSR_4]
     sectionWPs:
       - id: BUSR_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.85004744,
           32.86093287,
@@ -739,7 +739,7 @@ Routes:
           -96.60909393,
         ]
       - id: BUSR_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.95859300,
           32.97023200,
@@ -757,7 +757,7 @@ Routes:
           -96.70013531,
         ]
       - id: BUSR_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.00935760,
           33.00925403,
@@ -771,7 +771,7 @@ Routes:
           -96.82080042,
         ]
       - id: BUSR_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.01780763,
           33.01781298,
@@ -792,7 +792,7 @@ Routes:
     sections: [TWYL_1, TWYL_2, TWYL_3, TWYL_4]
     sectionWPs:
       - id: TWYL_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.01894475,
           33.05920775,
@@ -806,7 +806,7 @@ Routes:
           # -96.82957354,
         ]
       - id: TWYL_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.93178636,
           32.97916454,
@@ -818,7 +818,7 @@ Routes:
           -96.83651014,
         ]
       - id: TWYL_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.87286331,
           32.91968097,
@@ -828,7 +828,7 @@ Routes:
           -96.82651986,
         ]
       - id: TWYL_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.80658847,
           32.81329143,
@@ -854,7 +854,7 @@ Routes:
       #     -96.80654883,
       #   ]
       - id: TWYR_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.80787395,
           32.85858677,
@@ -864,7 +864,7 @@ Routes:
           -96.80641588,
         ]
       - id: TWYR_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.87086794,
           32.89000203,
@@ -876,7 +876,7 @@ Routes:
           -96.81300814,
         ]
       - id: TWYR_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.93185466,
           32.97692665,
@@ -888,7 +888,7 @@ Routes:
           -96.82275186,
         ]
       - id: TWYR_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.01869794,
           33.05571384,
@@ -905,7 +905,7 @@ Routes:
     sections: [I35L_1, I35L_2, I35L_3, I35L_4]
     sectionWPs:
       - id: I35L_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.02758521,
           33.04218289,
@@ -921,7 +921,7 @@ Routes:
           -97.12696397,
         ]
       - id: I35L_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.97728213, # Duplicate
           33.00344805,
@@ -933,7 +933,7 @@ Routes:
           -96.99662167,
         ]
       - id: I35L_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.91096500,
           32.94039312,
@@ -945,7 +945,7 @@ Routes:
           -96.93766593,
         ]
       - id: I35L_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           # 32.77623916,
           32.78987798, # Duplicate
@@ -973,7 +973,7 @@ Routes:
     sections: [I35R_1, I35R_2, I35R_3, I35R_4]
     sectionWPs:
       - id: I35R_1
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.80658394,
           32.82103128,
@@ -989,7 +989,7 @@ Routes:
           -96.89170034,
         ]
       - id: I35R_2
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.91401001,
           32.94557954,
@@ -1003,7 +1003,7 @@ Routes:
           -96.92142974,
         ]
       - id: I35R_3
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           32.99075315,
           33.01371209,
@@ -1015,7 +1015,7 @@ Routes:
           -96.98308868,
         ]
       - id: I35R_4
-        max_slots: 100
+        max_slots: 1000
         wpLat: [
           33.03841786,
           33.08420003,
@@ -1031,7 +1031,7 @@ Routes:
 
 Intersections:
   - identifier: I1
-    max_slots: 100
+    max_slots: 1000
     location: [
       [32.813737, -96.829280],
       [32.809659, -96.810593],
@@ -1045,139 +1045,139 @@ Intersections:
     inbound: [I30R_1, I30L_4, CENR_4, I35L_4, TWYL_4]
     outbound: [I30R_2, I30L_5, CENL_1, I35R_1, TWYR_1]
   # - identifier: I2
-  #   max_slots: 100
+  #   max_slots: 1000
   #   location: [0,0]
   #   radius: 0.0
   #   inbound: [TWYR_1, TWYL_4, I35L_4]
   #   outbound: [TWYR_2, I35R_1, I35L_5]
   - identifier: I2
-    max_slots: 100
+    max_slots: 1000
     location: [32.798425, -96.680402]
     radius: [32.786189, -96.680406]
     inbound: [I30R_2, I30L_3, H12L_1]
     outbound: [I30R_3, I30L_4, H12R_1]
   - identifier: I3
-    max_slots: 100
+    max_slots: 1000
     location: [32.823253, -96.629737]
     radius: [32.815064, -96.629300]
     inbound: [I30R_3, I30L_2, 635R_1, 635L_4]
     outbound: [I30R_4, I30L_3, 635R_2, 635L_5]
   - identifier: I4
-    max_slots: 100
+    max_slots: 1000
     location: [32.856803, -96.554339]
     radius: [32.840334, -96.554136]
     inbound: [I30R_4, I30L_1, BUSL_4]
     outbound: [I30R_5, I30L_2, BUSR_1]
   - identifier: I5
-    max_slots: 100
+    max_slots: 1000
     location: [32.864748, -96.671334]
     radius: [32.852094, -96.671315]
     inbound: [635R_2, 635L_3, NHWR_2, NHWL_3]
     outbound: [635R_3, 635L_4, NHWR_3, NHWL_4]
   - identifier: I6
-    max_slots: 100
+    max_slots: 1000
     location: [32.860824, -96.719529]
     radius: [32.852605, -96.719153]
     inbound: [H12R_1, NHWL_2, NHWR_3]
     outbound: [H12L_1, NHWL_3, NHWR_4]
   - identifier: I7
-    max_slots: 100
+    max_slots: 1000
     location: [32.865485, -96.770210]
     radius: [32.857272, -96.770178]
     inbound: [CENR_3, CENL_1, NHWR_4, NHWL_1]
     outbound: [CENR_4, CENL_2, NHWR_5, NHWL_2]
   - identifier: I8
-    max_slots: 100
+    max_slots: 1000
     location: [32.865616, -96.811495]
     radius: [32.857447, -96.812463]
     inbound: [TWYR_1, TWYL_3, NHWR_5]
     outbound: [TWYR_2, TWYL_4, NHWL_1]
   - identifier: I9
-    max_slots: 100
+    max_slots: 1000
     location: [32.907969, -96.898048]
     radius: [32.898354, -96.898031]
     inbound: [I35R_1, I35L_3, 635R_5]
     outbound: [I35R_2, I35L_4, 635L_1]
   - identifier: I10
-    max_slots: 100
+    max_slots: 1000
     location: [32.926165, -96.820533]
     radius: [32.917959, -96.820531]
     inbound: [635R_4, 635L_1, TWYR_2, TWYL_2]
     outbound: [635R_5, 635L_2, TWYR_3, TWYL_3]
   - identifier: I11
-    max_slots: 100
+    max_slots: 1000
     location: [32.924584, -96.763624]
     radius: [32.915192, -96.763592]
     inbound: [CENR_2, CENL_2, 635R_3, 635L_2]
     outbound: [CENR_3, CENL_3, 635R_4, 635L_3]
   - identifier: I12
-    max_slots: 100
+    max_slots: 1000
     location: [32.950395, -96.618848]
     radius: [32.939452, -96.618800]
     inbound: [NHWR_1, NHWL_4, BUSR_1, BUSL_3]
     outbound: [NHWR_2, NHWL_5, BUSR_2, BUSL_4]
   - identifier: I13
-    max_slots: 100
+    max_slots: 1000
     location: [33.004034, -96.708169]
     radius: [32.993887, -96.708185]
     inbound: [CENR_1, CENL_3, BUSR_2, BUSL_2]
     outbound: [CENR_2, CENL_4, BUSR_3, BUSL_3]
   - identifier: I14
-    max_slots: 100
+    max_slots: 1000
     location: [33.012708, -96.829133]
     radius: [33.002924, -96.829118]
     inbound: [TWYR_3, TWYL_1, BUSR_3, BUSL_1]
     outbound: [TWYR_4, TWYL_2, BUSR_4, BUSL_2]
   - identifier: I15
-    max_slots: 100
+    max_slots: 1000
     location: [32.982698, -96.930405]
     radius: [32.972872, -96.930181]
     inbound: [I35R_2, I35L_2, BUSR_4]
     outbound: [I35R_3, I35L_3, BUSL_1]
   - identifier: I16
-    max_slots: 100
+    max_slots: 1000
     location: [33.030162, -96.992803]
     radius: [33.015904, -96.992773]
     inbound: [I35R_3, I35L_1, COLR_2]
     outbound: [I35R_4, I35L_2, COLL_1]
   - identifier: I17
-    max_slots: 100
+    max_slots: 1000
     location: [33.091341, -96.822913]
     radius: [33.081282, -96.822819]
     inbound: [TWYR_4, COLL_1, COLR_1]
     outbound: [TWYL_1, COLL_2, COLR_2]
   - identifier: I18
-    max_slots: 100
+    max_slots: 1000
     location: [33.157978, -96.645572]
     radius: [33.139000, -96.645655]
     inbound: [CENL_4, COLL_2]
     outbound: [CENR_1, COLR_1]
   - identifier: I19
-    max_slots: 100
+    max_slots: 1000
     location: [32.760958, -96.907528]
     radius: [32.750283, -96.907517]
     inbound: [I30L_5]
     outbound: [I30R_1]
   - identifier: I20
-    max_slots: 100
+    max_slots: 1000
     location: [32.792524, -96.625125]
     radius: [32.784336, -96.624916]
     inbound: [635L_5]
     outbound: [635R_1]
   - identifier: I21
-    max_slots: 100
+    max_slots: 1000
     location: [32.899830, -96.457017]
     radius: [32.893900, -96.457014]
     inbound: [I30R_5]
     outbound: [I30L_1]
   - identifier: I22
-    max_slots: 100
+    max_slots: 1000
     location: [33.027299, -96.522637]
     radius: [33.018640, -96.522636]
     inbound: [NHWL_5]
     outbound: [NHWR_1]
   - identifier: I23
-    max_slots: 100
+    max_slots: 1000
     location: [33.201340, -97.121611]
     radius: [33.185932, -97.121611]
     inbound: [I35R_4]

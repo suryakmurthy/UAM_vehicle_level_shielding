@@ -52,6 +52,7 @@ class Driver:
             rewardBeta=0.001,
             rewardAlpha=0.1,
             speedChangePenalty=0.001,
+            shieldPenalty = 0.1,
             rewardLOS=-1,
             stepPenalty=0,
             clearancePenalty=0.005,
@@ -80,6 +81,7 @@ class Driver:
         self.rewardBeta = rewardBeta
         self.rewardAlpha = rewardAlpha
         self.speedChangePenalty = speedChangePenalty
+        self.shieldPenalty = shieldPenalty
         self.rewardLOS = rewardLOS
         self.stepPenalty = stepPenalty
         self.clearancePenalty = clearancePenalty
@@ -137,6 +139,7 @@ class Driver:
                 rewardAlpha=self.rewardAlpha,
                 speedChangePenalty=self.speedChangePenalty,
                 rewardLOS=self.rewardLOS,
+                shieldPenalty=self.shieldPenalty,
                 stepPenalty=self.stepPenalty,
                 clearancePenalty=self.clearancePenalty,
                 gui=self.gui,
@@ -186,6 +189,7 @@ class Driver:
             shield_total = 0
             shield_total_intersect = 0 
             shield_total_route = 0
+            scenario_file = None
             for result in results:
                 data = ray.get(result)
 
@@ -204,6 +208,7 @@ class Driver:
                 shield_total_route += data[0]['shield_events_r']
                 max_halt_time = data[0]['max_halting_time']
                 max_travel_time = data[0]['max_travel_time']
+                scenario_file = data[0]['scenario_file']
 
             if total_reward:
                 mean_total_reward = np.mean(total_reward)
@@ -212,9 +217,11 @@ class Driver:
                 scenario += 1
                 print(f"     Scenario Complete     ")
                 print("|------------------------------|")
+                print(f"| Scenario File:      {scenario_file}      |")
                 print(f"| Total NMACS:      {nmac}      |")
                 print(f"| Total Aircraft:   {total_ac[j]}  |")
                 roll_mean = np.mean(rewards[-150:])
+                # print(f"| Raw Reward: {total_reward[-1:]}  |")
                 print(f"| Rolling Mean Reward: {np.round(roll_mean, 1)}  |")
                 print(f"| Max Travel Time: {max_travel_time}  |")
                 print(f"| Number of LOS Events: {LOS_total}  |")
@@ -230,6 +237,7 @@ class Driver:
                 metric_dict['shield_total_route'] = shield_total_route
                 metric_dict['max_travel_time'] = max_travel_time
                 metric_dict['los'] = LOS_total
+                metric_dict['scenario_name'] = scenario_file
                 metric_list.append(metric_dict)
                 total_nmacs.append(nmac)
                 max_travel_times.append(max_travel_time)
@@ -298,7 +306,7 @@ class Driver:
         print("Mean Travel Times: ", np.mean(max_travel_times))
         print("Mean number of NMACS: ", np.mean(total_LOS))
         print(metric_list)
-        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/training_without_vls.json', 'w') as file:
+        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/mod_reward_table/full_training_version_30_0001_ns.json', 'w') as file:
             json.dump(metric_list, file, indent=4)
             
     def evaluate(self):
@@ -323,6 +331,7 @@ class Driver:
                 speedChangePenalty=self.speedChangePenalty,
                 rewardLOS=self.rewardLOS,
                 stepPenalty=self.stepPenalty,
+                # shieldPenalty=self.shieldPenalty 
                 gui=self.gui,
                 traffic_manager_active=self.traffic_manager_active
             )
@@ -334,7 +343,10 @@ class Driver:
         iteration_record = []
         total_transitions = 0
         best_reward = -np.inf
-
+        max_travel_times = []
+        iteration_record = []
+        total_LOS = []
+        
         if self.agent.equipped:
             self.agent.model.load_weights(self.weights_file)
             weights = self.agent.model.get_weights()
@@ -342,7 +354,8 @@ class Driver:
             weights = []
 
         runner_sims = [workers[agent_id].run_one_iteration.remote(weights) for agent_id in workers.keys()]
-
+        metric_list = []
+        scenario = 0
         for i in range(self.iterations):
 
             done_id, runner_sims = ray.wait(runner_sims, num_returns=self.num_workers)
@@ -353,24 +366,60 @@ class Driver:
             nmacs = []
             total_ac = []
             LOS_total = 0
+            shield_total = 0
+            shield_total_intersect = 0 
+            shield_total_route = 0
+            scenario_file = None
             for result in results:
+                scenario += 1
                 data = ray.get(result)
-                total_reward.append(float(np.sum(data[0]["raw_reward"])))
-                LOS_total += data[0]['los_counter']
+                try:
+                    total_reward.append(float(np.sum(data[0]["raw_reward"])))
+                except:
+                    pass
+                # LOS_total += data[0]['los_counter']
                 if data[0]['environment_done']:
                     nmacs.append(data[0]['nmacs'])
                     total_ac.append(data[0]['total_ac'])
+                LOS_total += data[0]['los_events']
+                shield_total += data[0]['shield_events']
+                shield_total_intersect += data[0]['shield_events_i']
+                shield_total_route += data[0]['shield_events_r']
+                max_halt_time = data[0]['max_halting_time']
+                max_travel_time = data[0]['max_travel_time']
+                scenario_file = data[0]['scenario_file']
 
             mean_total_reward = np.mean(total_reward)
 
             for j, nmac in enumerate(nmacs):
                 print(f"     Scenario Complete     ")
                 print("|------------------------------|")
-                print(f"| Total LOS Events:      {LOS_total}      |")
+                print(f"| Scenario File:      {scenario_file}      |")
+                print(f"| Total NMACS:      {nmac}      |")
                 print(f"| Total Aircraft:   {total_ac[j]}  |")
+                # roll_mean = np.mean(rewards[-150:])
+                # print(f"| Rolling Mean Reward: {np.round(roll_mean, 1)}  |")
+                print(f"| Max Travel Time: {max_travel_time}  |")
+                print(f"| Number of LOS Events: {LOS_total}  |")
+                print(f"| Number of Shield Events: {shield_total}  |")
+                print(f"| Number of Intersection Shield Events: {shield_total_intersect}  |")
+                print(f"| Number of Route Shield Events: {shield_total_route}  |")
                 print("|------------------------------|")
                 print(" ")
                 total_nmacs.append(nmac)
+                iteration_record.append(i)
+                metric_dict = {}
+                metric_dict['scenario_num'] = scenario
+                metric_dict['shield_total'] = shield_total
+                metric_dict['shield_total_intersection'] = shield_total_intersect
+                metric_dict['shield_total_route'] = shield_total_route
+                metric_dict['max_travel_time'] = max_travel_time
+                metric_dict['los'] = LOS_total
+                metric_dict['scenario_name'] = scenario_file
+                metric_list.append(metric_dict)
+                total_nmacs.append(nmac)
+                max_travel_times.append(max_travel_time)
+                total_LOS.append(LOS_total)
                 iteration_record.append(i)
 
             rewards.append(mean_total_reward)
@@ -382,16 +431,20 @@ class Driver:
 
             # total_transitions += transitions
 
-            print(f"     Iteration {i} Complete     ")
-            print("|------------------------------|")
-            print(f"| Mean Total Reward:   {np.round(mean_total_reward, 1)}  |")
-            roll_mean = np.mean(rewards[-150:])
-            print(f"| Rolling Mean Reward: {np.round(roll_mean, 1)}  |")
-            print(f"| Number of LOS Events: {LOS_total}  |")
-            print("|------------------------------|")
-            print(" ")
-
+            # print(f"     Iteration {i} Complete     ")
+            # print("|------------------------------|")
+            # print(f"| Mean Total Reward:   {np.round(mean_total_reward, 1)}  |")
+            # roll_mean = np.mean(rewards[-150:])
+            # print(f"| Rolling Mean Reward: {np.round(roll_mean, 1)}  |")
+            # print(f"| Number of LOS Events: {LOS_total}  |")
+            # print("|------------------------------|")
+            # print(" ")
             runner_sims = [workers[agent_id].run_one_iteration.remote(weights) for agent_id in workers.keys()]
+        print("Mean Travel Times: ", np.mean(max_travel_times))
+        print("Mean number of NMACS: ", np.mean(total_LOS))
+        print(metric_list)
+        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/eval/full_training_version_30_1_0.json', 'w') as file:
+            json.dump(metric_list, file, indent=4)
 
 
 ### Main code execution

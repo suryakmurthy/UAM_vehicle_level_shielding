@@ -5,14 +5,14 @@
 
 ## ** Driver parameters **
 #  -----------------
-Driver.run_name = 'train'
-Driver.run_type = 'train' # 'train' or 'eval'
-Driver.iterations= 1000
+Driver.run_name = 'aircraft_30_mod_reward_0001_test'
+Driver.run_type = 'eval' # 'train' or 'eval'
+Driver.iterations= 5000
 Driver.num_workers = 1 # of parallel runners
-Driver.scenario_file =  'scenarios/generated_scenarios/full_demo.scn' # 'scenarios/train/demo-5.scn'
+Driver.scenario_file =  'scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn' # 'scenarios/train' 
 Driver.config_file = 'settings.cfg'
-Driver.gui = True
-Driver.weights_file = r'/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/models/train/best_model.h5' # used for evaluation
+Driver.gui = False
+Driver.weights_file = r'/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/models/aircraft_30_mod_reward_0001/best_model.h5' # used for evaluation
 
 
 ## Case Study parameters
@@ -29,13 +29,14 @@ Driver.intruderThreshold = 6000 #  meters distance to consider intruders in owns
 ## Reward Function
 Driver.rewardBeta = 0.0001
 Driver.rewardAlpha = 0.1
-Driver.speedChangePenalty = 0.001
+Driver.speedChangePenalty = 0.0001
+Driver.shieldPenalty = 1.0
 Driver.rewardLOS = -1
 Driver.stepPenalty = 0.002
 Driver.clearancePenalty = 0.005
 Driver.traffic_manager_active = True
 Driver.d2mav_active = True
-Driver.vls_active = True
+Driver.vls_active = False
 ## Non-cooperative
 Driver.non_coop_tag = 0 # 0 means all are coorperative. 1 means Loss of Control (maintain same speed). 2 means Loss of Communication (Other aircraft cannot see it)
 
