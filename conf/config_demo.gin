@@ -5,13 +5,13 @@
 
 ## ** Driver parameters **
 #  -----------------
-Driver.run_name = 'aircraft_30_mod_reward_0001_test'
-Driver.run_type = 'eval' # 'train' or 'eval'
-Driver.iterations= 5000
+Driver.run_name = 'csma_cd_ver_2'  #'aircraft_30_no_vls_full_train'
+Driver.run_type = 'train' # 'train' or 'eval'
+Driver.iterations= 20000
 Driver.num_workers = 1 # of parallel runners
 Driver.scenario_file =  'scenarios/generated_scenarios_2/aircraft_30/test_case_0.scn' # 'scenarios/train' 
 Driver.config_file = 'settings.cfg'
-Driver.gui = False
+Driver.gui = True
 Driver.weights_file = r'/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/models/aircraft_30_mod_reward_0001/best_model.h5' # used for evaluation
 
 
@@ -24,19 +24,19 @@ Driver.speeds = [5,0,60] ## change to [156, 0, 346] for commercial | [0,0,84] fo
 Driver.LOS = 150 # 10 meters from intruder, change to 3 (nm) for commercial
 Driver.dGoal = 500 # 100 meters from goal, change to 5 (nm) for commercial
 Driver.maxRewardDistance = 1000 # intruders within 100 meters are considered for reward, change to 20 (nm) for commercial
-Driver.intruderThreshold = 6000 #  meters distance to consider intruders in ownship state, change to 50 (nm) for commercial
+Driver.intruderThreshold = 750 #  meters distance to consider intruders in ownship state, change to 50 (nm) for commercial
 
 ## Reward Function
 Driver.rewardBeta = 0.0001
 Driver.rewardAlpha = 0.1
 Driver.speedChangePenalty = 0.0001
-Driver.shieldPenalty = 1.0
+Driver.shieldPenalty = 0.0001
 Driver.rewardLOS = -1
 Driver.stepPenalty = 0.002
 Driver.clearancePenalty = 0.005
 Driver.traffic_manager_active = True
 Driver.d2mav_active = True
-Driver.vls_active = False
+Driver.vls_active = True
 ## Non-cooperative
 Driver.non_coop_tag = 0 # 0 means all are coorperative. 1 means Loss of Control (maintain same speed). 2 means Loss of Communication (Other aircraft cannot see it)
 

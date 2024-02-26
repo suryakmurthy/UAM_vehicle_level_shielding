@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 # Load data from JSON file
-with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/mod_reward_table/full_training_version_30_0001.json', 'r') as file:
+with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/eval/full_training_version_30_1_0.json', 'r') as file:
     data = json.load(file)
 
 # Extracting data for plotting

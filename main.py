@@ -54,7 +54,7 @@ class Driver:
             speedChangePenalty=0.001,
             shieldPenalty = 0.1,
             rewardLOS=-1,
-            stepPenalty=0,
+            stepPenalty=0.002,
             clearancePenalty=0.005,
             gui=False,
             non_coop_tag=0,
@@ -269,10 +269,11 @@ class Driver:
             # print(" ")
 
             if self.agent.equipped:
+                # print("checking_vals: ", len(rewards), rewards)
                 if len(rewards) > 150:
                     if np.mean(rewards[-150:]) > best_reward:
                         best_reward = np.mean(rewards[-150:])
-                        self.agent.model.save_weights("{}/best_model.h5".format(self.path_models))
+                        self.agent.model.save_weights("{}/best_model_{}.h5".format(self.path_models, i))
 
                 self.agent.model.save_weights("{}/model.h5".format(self.path_models))
 
@@ -306,7 +307,7 @@ class Driver:
         print("Mean Travel Times: ", np.mean(max_travel_times))
         print("Mean number of NMACS: ", np.mean(total_LOS))
         print(metric_list)
-        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/mod_reward_table/full_training_version_30_0001_ns.json', 'w') as file:
+        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/cmsa_cd/csma_cd_ver_2.json', 'w') as file:
             json.dump(metric_list, file, indent=4)
             
     def evaluate(self):
@@ -337,7 +338,7 @@ class Driver:
             )
             for i in range(self.num_workers)
         }
-
+        print("Testing")
         rewards = []
         total_nmacs = []
         iteration_record = []
@@ -443,7 +444,7 @@ class Driver:
         print("Mean Travel Times: ", np.mean(max_travel_times))
         print("Mean number of NMACS: ", np.mean(total_LOS))
         print(metric_list)
-        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/eval/full_training_version_30_1_0.json', 'w') as file:
+        with open('/home/suryamurthy/UT_Autonomous_Group/vehicle_level_shielding/log/eval/ver_50/aircraft_50_test_ver_0001_11537.json', 'w') as file:
             json.dump(metric_list, file, indent=4)
 
 
