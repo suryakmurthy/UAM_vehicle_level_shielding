@@ -133,7 +133,7 @@ class Runner(object):
             non_coop_tag=0,
             traffic_manager_active=True,
             d2mav_active=True,
-            vls_active=False,
+            vls_active=True,
             run_type="train",
     ):
         self.id = actor_id
@@ -155,11 +155,16 @@ class Runner(object):
         self.dGoal = dGoal
         self.maxRewardDistance = maxRewardDistance
         self.intruderThreshold = intruderThreshold
+
+        #### ADDITIONAL METRIC ####
+        self.intersection_radius = 2700
+        #### ADDITIONAL METRIC ####
+
         self.rewardBeta = rewardBeta
         self.rewardAlpha = rewardAlpha
         self.speedChangePenalty = speedChangePenalty
         self.rewardLOS = rewardLOS
-        self.shieldPenalty = shieldPenalty[0] # add [0] if testing
+        self.shieldPenalty = shieldPenalty #[0] # add [0] if testing
         self.stepPenalty = stepPenalty
         self.clearancePenalty = clearancePenalty
         self.gui = gui
@@ -215,14 +220,15 @@ class Runner(object):
 
 
         ### VLS Variables
-        self.nmac_offset = 3 * 86
+        self.nmac_offset = 5 * 86
         self.nmac_distance = self.LOS + self.nmac_offset
         self.max_halt_time = 0
         self.halt_start = {}
         self.full_travel = {}
         self.travel_start = {}
+        self.wait_time = {}
         print(self.nmac_distance)
-        print("Reward_params", self.shieldPenalty, self.rewardLOS)
+        print("Reward_params", self.shieldPenalty, self.rewardLOS, self.run_type)
 
         self.communication_radius = self.intruderThreshold
         
@@ -440,6 +446,7 @@ class Runner(object):
                 if response:
                     self.vehicle_helpers[id_].enter_request_status = True
                     self.travel_start[id_] = self.bs.sim.simt
+                    self.wait_time[id_] = 0
                 else:
                     self.vehicle_helpers[id_].enter_request_status = False
                     self.pending_initial_requests.append(id_)
@@ -504,102 +511,52 @@ class Runner(object):
                 ).reshape(n_ac, n_ac)
                 * geo.nm)
                 nmac_flag = False
-                if ac_id in self.agent_to_id.keys():
-                    own_group = self.agent_to_id[ac_id]
-                    if self.vehicle_helpers[self.current_movement[own_group]].next_route_section != self.vehicle_helpers[ac_id].next_route_section and self.vehicle_helpers[self.current_movement[own_group]].current_route_section != self.vehicle_helpers[ac_id].next_route_section:
-                        # if d[i][j] - (self.simdt*self.speeds[0]) <= self.nmac_distance:
-                        #     self.vls_modifications_halt.append(ac_id)
-                        #     self.action_override.append(ac_id)
-                        #     self.shield_counter += 1
-                        #     # print("Halting Vehicle on Different next route section")
-                        # else:
-                        # Steps: Check distance and direction of other agents in the group
-                        # If this agent is the closest
-                        # Overwrite the other agents (that aren't in that direction)
-                        # Don't Slow down that agent
-                        min_distance = np.inf
-                        min_id = None
-                        for other_id in self.id_to_group[own_group]:
-                            other_idx = self.bs.traf.id2idx(other_id.vehicle_ID)
-                            other_lat = self.bs.traf.lat[other_idx]
-                            other_lon = self.bs.traf.lon[other_idx]
-                            other_hdg = self.bs.traf.lon[other_idx]
-                            intersection_name = self.group_to_i_r[own_group]
-                            if intersection_name not in self.traffic_manager.intersections.keys():
-                                for key_val_1 in self.id_to_group.keys():
-                                    print(key_val_1, [element.vehicle_ID for element in self.id_to_group[key_val_1]], self.group_to_i_r[key_val_1])
-                            direction, distance = self.distance_and_direction(other_lat, other_lon, other_hdg, intersection_name)
-                            if direction == 1:
-                                if distance < min_distance:
-                                    min_distance = distance
-                                    min_id = other_id.vehicle_ID
-                        if ac_id != min_id and speed != self.speeds[0]:
-                            # print("Slowing Down Vehicle on Different next route section: ", ac_id, min_id, self.vehicle_helpers[self.current_movement[own_group]].next_route_section, self.vehicle_helpers[ac_id].next_route_section)
-                            speed = self.speeds[0]
-                            self.shield_counter += 1
-                            self.shield_counter_intersect += 1
-                            self.vls_modifications_slow.append(ac_id)
-                    else:
-                        for other_id in self.id_to_group[own_group]:
-                            if other_id.current_route_section != self.vehicle_helpers[ac_id].current_route_section:
-                                continue
-                            actions[ac_id] = 1
-                            j_idx = self.bs.traf.id2idx(other_id.vehicle_ID)
-                            i_idx = self.bs.traf.id2idx(ac_id)
-                            spd = self.bs.traf.tas[i_idx]
-                            new_distance = d[i_idx][j_idx] - (self.simdt*spd)
-                            ## Comment this out
-                            if new_distance < self.nmac_distance and i_idx != j_idx:
-                                nmac_flag = True
-                                if self.bs.traf.distflown[i_idx] < self.bs.traf.distflown[j_idx]:
-                                    if other_id in speed_dict.keys() and (speed_dict[other_id] == speed[0]):
-                                        speed_dict[other_id] = int(
-                                            np.round(
-                                                (self.bs.traf.cas[self.bs.traf.id2idx(ac_id)] / geo.nm) * 3600
-                                            )
-                                        )
-                                        # self.shield_counter += 1
-                                        # self.shield_counter_route += 1
-                                    else:
-                                        speed = self.speeds[0]
-                                        self.shield_counter += 1
-                                        self.shield_counter_route += 1
-                                        self.vls_modifications_slow.append(ac_id)
-                                        # print("Slowing Down: ", ac_id, other_id.vehicle_ID, d[i_idx][j_idx], self.bs.traf.distflown[i_idx], self.bs.traf.distflown[j_idx], self.vehicle_helpers[ac_id].current_route_section, self.vehicle_helpers[other_id.vehicle_ID].current_route_section)
+                if self.wait_time[ac_id] != 0:
+                    self.wait_time[ac_id] -= 1
+                    self.action_override.append(ac_id)
+                else:
+                    for other_id in self.bs.traf.id:
+                        if ac_id == other_id:
+                            continue
+                        i_idx = self.bs.traf.id2idx(ac_id)
+                        j_idx = self.bs.traf.id2idx(other_id)
+                        # print(f"Checking Conflict between {ac_id} and {other_id} with distance {d[i_idx][j_idx]} and nmac distance {self.nmac_distance}, {self.vehicle_helpers[ac_id].current_route_section}, {self.vehicle_helpers[other_id].current_route_section}")
+                        # print("Checking Distance Between: ", ac_id, other_id, d[i_idx][j_idx], self.intersection_radius)
+                        
+                        # if self.vehicle_helpers[other_id].current_route_section == None or self.vehicle_helpers[ac_id].current_route_section == None:
+                        #     continue
+                        if d[i_idx][j_idx] > self.intersection_radius:
+                            continue
+                        if self.vehicle_helpers[other_id].current_route_section != None and self.vehicle_helpers[ac_id].current_route_section != None:
+                            if self.vehicle_helpers[other_id].current_route_section[0:3] != self.vehicle_helpers[ac_id].current_route_section[0:3]:
+                                if self.vehicle_helpers[other_id].current_intersection != None and self.vehicle_helpers[ac_id].current_intersection == None:
+                                    if self.bs.traf.tas[j_idx] != 0:
+                                        print(f"Halting Aircraft 1 {ac_id} due to Intersection Conflict with {other_id} with next routes {self.vehicle_helpers[ac_id].current_intersection}, {self.vehicle_helpers[other_id].current_intersection}")
+                                        self.action_override.append(ac_id)
                                 else:
-                                    if other_id in speed_dict.keys() and (speed_dict[other_id] == speed[2]):
-                                        speed_dict[other_id] = int(
-                                            np.round(
-                                                (self.bs.traf.cas[self.bs.traf.id2idx(ac_id)] / geo.nm) * 3600
-                                            )
-                                        )
-                                        actions[ac_id] = 1
-                                        # self.shield_counter += 1
-                                        # self.shield_counter_route += 1
-                                    else:
-                                        speed = self.speeds[2]
-                                        self.shield_counter += 1
-                                        self.shield_counter_route += 1
-                                        self.vls_modifications_slow.append(ac_id)
-                                        # print("Speeding Up: ", ac_id, other_id.vehicle_ID, d[i_idx][j_idx], self.bs.traf.distflown[i_idx], self.bs.traf.distflown[j_idx])
-                            # elif new_distance < self.nmac_distance and i != j:
-                            #     if speed != self.speeds[0]:
-                            #         if self.bs.traf.distflown[i] < self.bs.traf.distflown[j]:
-                            #             # print("Slow Down: ", ac_id, other_id.vehicle_ID , d[i][j], self.bs.traf.distflown[i], self.bs.traf.distflown[j], new_distance, self.nmac_distance, speed)
-                            #             speed = self.speeds[0]
-                            #             self.shield_counter += 1
-                            #             self.shield_counter_route += 1
-                            #             self.vls_modifications_slow.append(ac_id)
-                    if nmac_flag == False:
-                        if ac_id in self.halt_start:
-                            del self.halt_start[ac_id]
+                                    if self.bs.traf.tas[j_idx] != 0:
+                                        print(f"Halting Aircraft 2 {ac_id} due to Intersection Conflict with {other_id} with next routes {self.vehicle_helpers[other_id].current_route_section[0:3]}, {self.vehicle_helpers[ac_id].current_route_section[0:3]}")
+                                        self.action_override.append(ac_id)
+                                        self.wait_time[ac_id] = random.randint(1, 100)
+
+
+                        if self.bs.traf.distflown[i_idx] < self.bs.traf.distflown[j_idx]:
+                            # print(f"Potential Slow Down between {ac_id} and {other_id} with distance {d[i_idx][j_idx]} and nmac distance {self.nmac_distance}")
+                            if d[i_idx][j_idx] < self.nmac_distance:
+                                if self.bs.traf.tas[j_idx] == 0:
+                                    self.action_override.append(ac_id)
+                                else:
+                                    speed = self.speeds[0]
+                                    self.vls_modifications_slow.append(ac_id)
+                                self.shield_counter += 1
+                                self.shield_counter_route += 1
+                                        
             if ac_id in self.action_override:
                 speed = 0
             else:
                 if speed == 0:
                     # print("Error Flag")
-                    speed = self.speeds[2]
-                    
+                    speed = self.speeds[2]     
             speed_dict[ac_id] = speed
         for ac_id in speed_dict.keys():
             self.bs.stack.stack("{} SPD {}".format(ac_id, speed_dict[ac_id]))
@@ -858,6 +815,7 @@ class Runner(object):
                     self.vehicle_helpers[id_].initial_request_granted = True
                     self.pending_initial_requests.remove(id_)
                     self.travel_start[id_] = self.bs.sim.simt
+                    self.wait_time[id_] = 0
                     # set the clearance to True. Optional fields are ALT, SPD
                     k_idx = self.bs.traf.id2idx(id_)
                     self.bs.traf.ap.setclrcmd(k_idx, True, 400, 30)
@@ -881,6 +839,7 @@ class Runner(object):
                 if response and not self.within_LOS(id_):
                     # print(f"{id_} approved departure")
                     self.travel_start[id_] = self.bs.sim.simt
+                    self.wait_time[id_] = 0
                     self.vehicle_helpers[id_].initial_request_granted = True
                     self.vehicle_helpers[id_].enter_request_status = True
                 else:
@@ -1571,11 +1530,11 @@ class Runner(object):
                         curr_m = self.current_movement[v_group]
                     id_j = self.bs.traf.id[index]
                     if (id_, id_j) not in self.prev_LOS_pairs and (id_j, id_) not in self.prev_LOS_pairs and (id_, id_j) not in new_LOS_pairs and (id_j, id_) not in new_LOS_pairs:
-                        # print("New LOS has Occurred", id_, id_j, curr_m, rew[id_], d[i, index], self.vehicle_helpers[id_].current_intersection, self.vehicle_helpers[id_j].current_intersection, self.vehicle_helpers[id_].current_route_section, self.vehicle_helpers[id_j].current_route_section, self.los_events, self.prev_LOS_pairs, new_LOS_pairs)
-                        # for key_val_1 in self.id_to_group.keys():
-                        #     print(key_val_1, [element.vehicle_ID for element in self.id_to_group[key_val_1]], self.group_to_i_r[key_val_1]) 
+                        print("New LOS has Occurred", id_, id_j, curr_m, rew[id_], d[i, index], self.vehicle_helpers[id_].current_intersection, self.vehicle_helpers[id_j].current_intersection, self.vehicle_helpers[id_].current_route_section, self.vehicle_helpers[id_j].current_route_section, self.los_events, self.prev_LOS_pairs, new_LOS_pairs)
+                        for key_val_1 in self.id_to_group.keys():
+                            print(key_val_1, [element.vehicle_ID for element in self.id_to_group[key_val_1]], self.group_to_i_r[key_val_1]) 
                         self.los_events += 1
-                        # time.sleep(10)
+                        time.sleep(10)
                     new_LOS_pairs.append((id_, id_j))
                     reward_count = True
                     info[id_] = 1
